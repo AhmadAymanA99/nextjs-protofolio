@@ -1,7 +1,7 @@
-import { parseISO, format } from 'date-fns'
+import { parseISO, format } from "date-fns";
 
 export default function Date({ dateString }) {
-    const date = parseISO(dateString)
+    const date = parseISO(dateString);
 
-    return <time dateTime={dateString}>{format(date, 'dd, MMMM yyyy')}</time>
+    return dateString === "now" ? "now" : <time dateTime={dateString}>{format(date, "dd-MM-yyyy")}</time>;
 }

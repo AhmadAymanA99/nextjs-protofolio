@@ -1,7 +1,7 @@
 ---
 title: 'Procoor Solutions'
 date: '2022-01-23'
-till: 'now'
+till: '2022-12-01'
 ---
 
 ## Location:

@@ -1,65 +1,46 @@
 import Head from "next/head";
-import Link from "next/link";
-
 import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
 import { getSortedPostsData } from "../lib/posts";
 import { getSortedExperiencesData } from "../lib/experience";
 import utilStyles from "../styles/utils.module.css";
+import Footer from "../components/Footer";
+import Section from "../components/Section";
 
 export default function Home({ allPostsData, allExperiencesData }) {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p className="para">Front-End Developer (React / React-Native)</p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Experience</h2>
-        <ul className={utilStyles.list}>
-          {allExperiencesData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/experiences/${id}`}>
-                <a> {title} </a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Projects</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a> {title} </a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
-  );
+    return (
+        <>
+            <Layout home>
+                <Head>
+                    <title>{siteTitle}</title>
+                    <meta name="description" content="Experienced Front-End Developer specializing in React and React Native." />
+                    <meta property="og:title" content={siteTitle} />
+                    <meta property="og:description" content="Explore my experience and projects." />
+                    <meta property="og:type" content="website" />
+                </Head>
+
+                <section className={utilStyles.headingMd}>
+                    <p className="para">Front-End Developer</p>
+                    <span className="para-span">(React / React-Native)</span>
+                </section>
+
+                {/* Reusable sections for Experience and Projects */}
+                <Section title="Experience" url={"experiences"} data={allExperiencesData} />
+                <Section title="Projects" url={"posts"} data={allPostsData} />
+            </Layout>
+            <Footer />
+        </>
+    );
 }
 
 export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
-  const allExperiencesData = await getSortedExperiencesData();
-  console.log("allExperiencesData:", allExperiencesData);
-  return {
-    props: {
-      allPostsData,
-      allExperiencesData,
-    },
-  };
+    const allPostsData = await getSortedPostsData();
+    const allExperiencesData = await getSortedExperiencesData();
+
+    return {
+        props: {
+            allPostsData,
+            allExperiencesData,
+        },
+    };
 }
