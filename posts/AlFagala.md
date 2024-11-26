@@ -1,5 +1,5 @@
 ---
-title: 'ALFAGALA'
+title: 'Al Fagala'
 date: '2024-10-10'
 ---
 
@@ -26,4 +26,4 @@ To align with our customers' needs, the company has partnered with electronic pa
 Furthermore, the company has launched its website, making it a platform accessible to all customers nationwide.
 
 ### Live On:
-[ALFAGALA](https://www.alfagala.com/)
+[Al Fagala](https://www.alfagala.com/)

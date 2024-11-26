@@ -1,5 +1,5 @@
 ---
-title: 'AWN-APP'
+title: 'Awn App'
 date: '2020-10-29'
 ---
 
@@ -23,4 +23,4 @@ cannot find a fast way to donate.
 [AhmadAymanA99/awn-app](https://github.com/AhmadAymanA99/awn-app)
 
 ### Live Deploy:
-[AWN-APP](https://awn-app.herokuapp.com/)
+[Awn App](https://awn-app.herokuapp.com/)

@@ -1,5 +1,5 @@
 ---
-title: 'AWAFI-CLINIC'
+title: 'Awafi Clinic'
 date: '2023-09-19'
 ---
 
@@ -12,4 +12,4 @@ Awafi is an electronic clinic that allows you to measure the severity of your ps
 The treatment programs include educational material about the disorder and its treatment methods through written and video content. You will also engage in daily and weekly exercises to overcome the symptoms you are experiencing, all under full medical supervision.
 
 ### Live On:
-[AWAFI-CLINC](https://awaficlinic.com/)
+[Awafi Clinic](https://awaficlinic.com/)
