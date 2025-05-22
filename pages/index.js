@@ -21,7 +21,7 @@ export default function Home({ allPostsData, allExperiencesData }) {
 
                 <section className={utilStyles.headingMd}>
                     <p className="para">Front-End Developer</p>
-                    <span className="para-span">(React / React-Native)</span>
+                    <span className="para-span">(React.js / Next.js)</span>
                 </section>
 
                 {/* Reusable sections for Experience and Projects */}
