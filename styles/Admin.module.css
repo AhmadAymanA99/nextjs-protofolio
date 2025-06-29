@@ -34,3 +34,13 @@
 .viewsTable th {
     background-color: #f5f5f5;
 }
+
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.viewsTable {
+    min-width: 600px;
+}

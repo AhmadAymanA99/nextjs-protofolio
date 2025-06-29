@@ -23,7 +23,6 @@ export default function AnalyticsDashboard() {
 
     useEffect(() => {
         const password = prompt("Enter admin password:");
-        console.log(password, process.env.NEXT_PUBLIC_ADMIN_SECRET);
 
         if (password === process.env.NEXT_PUBLIC_ADMIN_SECRET) {
             setAuthenticated(true);
@@ -72,28 +71,30 @@ export default function AnalyticsDashboard() {
                 </div>
 
                 <h2>Recent Page Views</h2>
-                <table className={styles.viewsTable}>
-                    <thead>
-                        <tr>
-                            <th>Path</th>
-                            <th>Country</th>
-                            <th>Device</th>
-                            <th>Referrer</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {pageViews?.map((view, index) => (
-                            <tr key={index}>
-                                <td>{view.path}</td>
-                                <td>{view.country}</td>
-                                <td>{view.device_type}</td>
-                                <td>{view.referrer}</td>
-                                <td>{new Date(view.timestamp).toLocaleString()}</td>
+                <div className={styles.tableWrapper}>
+                    <table className={styles.viewsTable}>
+                        <thead>
+                            <tr>
+                                <th>Path</th>
+                                <th>Country</th>
+                                <th>Device</th>
+                                <th>Referrer</th>
+                                <th>Time</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {pageViews?.map((view, index) => (
+                                <tr key={index}>
+                                    <td>{view.path}</td>
+                                    <td>{view.country}</td>
+                                    <td>{view.device_type}</td>
+                                    <td>{view.referrer}</td>
+                                    <td>{new Date(view.timestamp).toLocaleString()}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </Layout>
     );
